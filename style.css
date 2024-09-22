@@ -1,0 +1,87 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.whois-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    width: 60%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.whois-result {
+    margin-top: 30px;
+    text-align: left;
+}
+
+table.whois-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.whois-table th, table.whois-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table.whois-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none; /* Ensures no bullets */
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 5px; /* Adds space between items */
+}
+
