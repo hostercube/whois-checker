@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHOIS Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            max-width: 200px;
+        }
+        .banner {
+            margin-top: 20px;
+            background: url('banner.jpg') no-repeat center center;
+            background-size: cover;
+            height: 200px;
+            border-radius: 8px;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: -100px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .result h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .result-table {
+            width: 50%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .result-table th, .result-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        .result-table th {
+            background-color: #f1f1f1;
+            font-weight: bold;
+            text-align: left;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo">
+    </div>
+    
+    <div class="banner"></div>
+    
+    <div class="container">
+        <div class="card">
+            <h1 class="text-center">WHOIS Domain Checker</h1>
+            <form id="whois-form" method="post">
+                <div class="mb-3">
+                    <label for="domain" class="form-label">Enter Domain Name:</label>
+                    <input type="text" class="form-control" id="domain" name="domain" required>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Check WHOIS</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="result-container" class="mt-4 result">
+            <!-- WHOIS results will be displayed here -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#whois-form').on('submit', function(event) {
+                event.preventDefault();
+                var domain = $('#domain').val();
+
+                $.ajax({
+                    url: 'whois-checker.php',
+                    type: 'POST',
+                    data: { domain: domain },
+                    success: function(data) {
+                        $('#result-container').html(data);
+                    },
+                    error: function() {
+                        $('#result-container').html('<div class="alert alert-danger">Error retrieving WHOIS data. Please try again.</div>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
