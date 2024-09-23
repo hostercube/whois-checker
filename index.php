@@ -54,6 +54,7 @@ if (isset($_POST['domain'])) {
 <body>
 
 <div class="whois-container">
+    <a href="https://hostercube.com" target="_blank"><img src="img/hostercube.png" alt="logo" width="300" height="60"></a>
     <h1>Domain WHOIS Lookup</h1>
 
     <form method="POST" action="">
