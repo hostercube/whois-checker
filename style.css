@@ -84,4 +84,13 @@ ul {
 li {
     margin-bottom: 5px; /* Adds space between items */
 }
+.buy-now-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
 
